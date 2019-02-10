@@ -14,9 +14,7 @@ function sendMessage(channel, text) {
     }
   };
   request.post(options, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      console.log(body.name);
-    } else {
+    if (error || response.statusCode != 200) {
       console.log('error: ' + response.statusCode + body);
     }
   });
