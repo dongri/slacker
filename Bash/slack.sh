@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#######################################
+# ./slack.sh "#random" "bot" "message"
+#######################################
+
 WEBHOOKURL="https://hooks.slack.com/services/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"
 
 function post() {
