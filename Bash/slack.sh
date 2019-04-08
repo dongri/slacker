@@ -7,14 +7,18 @@
 WEBHOOKURL="https://hooks.slack.com/services/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"
 
 function post() {
-  PAYLOAD=$(cat <<EOS
+  channel=$1
+  username=$2
+  shift 2
+  text=$*
+  PAYLOAD=`cat <<_EOT_
     payload={
-      "channel":  "$1",
-      "username": "$2",
-      "text":     "$3",
+      "channel":  "$channel",
+      "username": "$username",
+      "text":     "$text",
     }
-  EOS)
-  curl -s -S -X POST --data-urlencode "${PAYLOAD}" "${WEBHOOKURL}" > /dev/null
+_EOT_`
+  curl -s -S -X POST --data-urlencode "${PAYLOAD}" "${WEBHOOKURL}" #> /dev/null
 }
 
 if [ $# -eq 3 ]; then
