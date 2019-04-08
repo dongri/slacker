@@ -18,7 +18,7 @@ function post() {
       "text":     "$text",
     }
 _EOT_`
-  curl -s -S -X POST --data-urlencode "${PAYLOAD}" "${WEBHOOKURL}" #> /dev/null
+  curl -s -S -X POST --data-urlencode "${PAYLOAD}" "${WEBHOOKURL}" > /dev/null
 }
 
 if [ $# -eq 3 ]; then
