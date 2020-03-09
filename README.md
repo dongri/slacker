@@ -1,2 +1,5 @@
-# slack-post
+# slacker
+
+コピペでSlackメッセージ送る便利なやつ
+
 
